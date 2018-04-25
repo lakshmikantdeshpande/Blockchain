@@ -6,11 +6,15 @@ contract ZombieFactory {
     uint dnaModulus = 10 ** dnaDigits;
 
     struct Zombie {
-        string name;
         uint dna;
+        string name;
     }
 
-    Zombie[] public zombies; // public dynamic array
+    Zombie[] public zombies;
+
+    function createZombie(string _name, uint _data) {
+        
+    }
 
 }
 
