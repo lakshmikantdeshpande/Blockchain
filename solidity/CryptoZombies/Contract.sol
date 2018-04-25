@@ -6,14 +6,14 @@ contract ZombieFactory {
     uint dnaModulus = 10 ** dnaDigits;
 
     struct Zombie {
-        uint dna;
         string name;
+        uint dna;
     }
 
     Zombie[] public zombies;
 
-    function createZombie(string _name, uint _data) {
-        
+    function createZombie(string _name, uint _dna) {
+        zombies.push(Zombie(_name, _dna));   
     }
 
 }
