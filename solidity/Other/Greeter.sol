@@ -1,12 +1,14 @@
+pragma solidity ^0.4.23;
+
 contract Mortal {
 
-	address mortal;
+	address owner;
 
-	function Mortal() {
+	constructor() public {
 		owner = msg.sender;
 	}
 
-	function kill() {
+	function kill() public {
 		if (msg.sender == owner) selfdestruct(owner);
 	}
 
@@ -16,11 +18,11 @@ contract Greeter is Mortal {
 	
 	string greeting;
 
-	function Greeter(string _greeting) public {
+	constructor(string _greeting) public {
 		greeting = _greeting;
 	}
 
-	function greet() constant returns (string) {
+	function greet() public constant returns (string) {
 		return greeting;
 	}
 
